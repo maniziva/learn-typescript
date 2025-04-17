@@ -30,7 +30,7 @@ test("Sum of all elements - Reduce", () => {
   console.log("Sum of all elements: ", sum);
 });
 
-test.only("Find max/Min numbers", () => {
+test("Find max/Min numbers", () => {
   let arr: number[] = [1, 3, 4, 5, 2];
   console.log("Without order: ", arr);
 
@@ -40,3 +40,28 @@ test.only("Find max/Min numbers", () => {
   let min: number = Math.min(...arr);
   console.log("Min number: ", min);
 });
+
+test('Find if the array is sorted or not', () => {
+    let arr: number[] = [1, 3, 4, 5, 1];
+    const isSorted = (arr: number[]) => {
+        let ascendingOrder: boolean = true;
+        let descendingOrder: boolean = true;
+    
+        for (let i = 1; i < arr.length; i++) {
+          if (arr[i] < arr[i - 1]) {
+            ascendingOrder = false;
+          } else if (arr[i] > arr[i - 1]) {
+            descendingOrder = false;
+          }
+        }
+    
+        if (ascendingOrder) {
+          return "Array is sorted in ascending order";
+        } else if (descendingOrder) {
+          return "Array is sorted in descending order";
+        } else {
+          return "Array is not sorted";
+        }
+      };
+      console.log(isSorted(arr)); // Output depends on the input array
+    });
