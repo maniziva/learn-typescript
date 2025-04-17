@@ -1,16 +1,42 @@
+test("Array - Sort", () => {
+  let arr: number[] = [1, 3, 4, 5, 2];
+  console.log("Without order: ", arr);
 
-test.only('Array - Sort', () => {
+  arr.sort((a, b) => a - b);
+  console.log("Ascending Order: ", arr);
 
-let arr : number[] = [1, 3, 4, 5, 2];
-console.log("Without order: ", arr);
+  arr.sort((a, b) => b - a);
+  console.log("Descending Order: ", arr);
+});
 
-arr.sort((a, b) => a - b);
-console.log("Ascending Order: ", arr);
+test("Find Largest/Smallest - Sort", () => {
+  let arr: number[] = [1, 3, 4, 5, 2];
+  console.log("Without order: ", arr);
 
-arr.sort((a, b) => b - a);
-console.log("Descending Order: ", arr);
+  arr.sort((a, b) => a - b);
+  console.log("Smallest Number: ", arr[0]);
+  console.log("Largest Number: ", arr[arr.length - 1]);
+  console.log("second largest number: ", arr[arr.length - 2]);
+});
 
-console.log("First element: ", arr[0]);
-console.log("Last element: ", arr[arr.length - 1]);
+test("Sum of all elements - Reduce", () => {
+  let arr: number[] = [1, 3, 4, 5, 2];
+  console.log("Without order: ", arr);
 
+  let sum: number = arr.reduce(
+    (accumulator, currentValue) => accumulator + currentValue,
+    0
+  );
+  console.log("Sum of all elements: ", sum);
+});
+
+test.only("Find max/Min numbers", () => {
+  let arr: number[] = [1, 3, 4, 5, 2];
+  console.log("Without order: ", arr);
+
+  let max: number = Math.max(...arr);
+  console.log("Max number: ", max);
+
+  let min: number = Math.min(...arr);
+  console.log("Min number: ", min);
 });
