@@ -45,7 +45,7 @@ npm install
 npx tsc       # Compiles all .ts files in the src/ folder
 ```
 
-### 4. Execute the Compiled JavaScript (optional)
+### 4. Run TypeScript Directly (using ts-node)
 ```bash
-node dist/basics.js
+npx ts-node src/basics.ts
 ```
