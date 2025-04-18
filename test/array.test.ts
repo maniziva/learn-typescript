@@ -126,3 +126,34 @@ test("Reverse string", () => {
   let reversedString: string = str.split("").reverse().join("");
   console.log("Reversed String: ", reversedString);
 });
+
+test('Reverse each word in a string arrays', () => {
+  const str: string[] = ["Hello", "World", "JavaScript"];
+  console.log("Without order: ", str);
+
+  const reversedWords: string[] = str.map((word) => word.split("").reverse().join(""));
+  console.log("Reversed words: ", reversedWords);
+});
+
+test('To check if an array is palindrome', () => {
+  const arr: number[] = [1, 2, 3, 2, 1];
+  console.log("Without order: ", arr);
+
+  const reversedArray: number[] = arr.reverse();
+  console.log("Reversed Array: ", reversedArray);
+
+  const isPalindrome: boolean = arr.join("") === reversedArray.join("");
+  console.log("Is palindrome: ", isPalindrome);}
+);
+
+test('To check if a string is palindrome', () => {
+  const str: string = "madam";
+  console.log("Without order: ", str);
+
+  const reversedString: string = str.split("").reverse().join("");
+  console.log("Reversed String: ", reversedString);
+
+  const isPalindrome: boolean = str === reversedString;
+  console.log("Is palindrome: ", isPalindrome);
+}
+);
