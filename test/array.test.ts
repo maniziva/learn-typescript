@@ -41,39 +41,54 @@ test("Find max/Min numbers", () => {
   console.log("Min number: ", min);
 });
 
-test('Find if the array is sorted or not', () => {
-    let arr: number[] = [1, 3, 4, 5, 1];
-    const isSorted = (arr: number[]) => {
-        let ascendingOrder: boolean = true;
-        let descendingOrder: boolean = true;
-    
-        for (let i = 1; i < arr.length; i++) {
-          if (arr[i] < arr[i - 1]) {
-            ascendingOrder = false;
-          } else if (arr[i] > arr[i - 1]) {
-            descendingOrder = false;
-          }
-        }
-    
-        if (ascendingOrder) {
-          return "Array is sorted in ascending order";
-        } else if (descendingOrder) {
-          return "Array is sorted in descending order";
-        } else {
-          return "Array is not sorted";
-        }
-      };
-      console.log(isSorted(arr)); // Output depends on the input array
-    });
+test("Find if the array is sorted or not", () => {
+  let arr: number[] = [1, 3, 4, 5, 1];
+  const isSorted = (arr: number[]) => {
+    let ascendingOrder: boolean = true;
+    let descendingOrder: boolean = true;
 
-test('Remove duplicates from an array', () => {
-    let arr: number[] = [1, 3, 4, 5, 1];
-    const removeDuplicates = [...new Set(arr)];
-      console.log("Remove duplicate from an number array: ",removeDuplicates); // Output: [1, 3, 4, 5]
-    
+    for (let i = 1; i < arr.length; i++) {
+      if (arr[i] < arr[i - 1]) {
+        ascendingOrder = false;
+      } else if (arr[i] > arr[i - 1]) {
+        descendingOrder = false;
+      }
+    }
 
-    let arr2: string[] = ["apple", "banana", "apple", "orange"];
-    const removeDuplicates2 = [...new Set(arr2)];
-        console.log("Remove duplicate from an string array: ",removeDuplicates2); // Output: ["apple", "banana", "orange"]
-
+    if (ascendingOrder) {
+      return "Array is sorted in ascending order";
+    } else if (descendingOrder) {
+      return "Array is sorted in descending order";
+    } else {
+      return "Array is not sorted";
+    }
+  };
+  console.log(isSorted(arr)); // Output depends on the input array
 });
+
+test("Remove duplicates from an array", () => {
+  let arr: number[] = [1, 3, 4, 5, 1];
+  const removeDuplicates = [...new Set(arr)];
+  console.log("Remove duplicate from an number array: ", removeDuplicates); // Output: [1, 3, 4, 5]
+
+  let arr2: string[] = ["apple", "banana", "apple", "orange"];
+  const removeDuplicates2 = [...new Set(arr2)];
+  console.log("Remove duplicate from an string array: ", removeDuplicates2); // Output: ["apple", "banana", "orange"]
+});
+
+test("find duplicates in an array", () => {
+  const nums: number[] = [1, 2, 3, 2, 4, 5, 1, 6, 4];
+  const duplicates = nums.filter((item, index) => nums.indexOf(item) !== index);
+
+  const uniqueDuplicates = [...new Set(duplicates)];
+  console.log("Duplicate elements:", uniqueDuplicates);
+});
+
+test("find duplicates in an string array", () => {
+  const str: string[] = ["apple", "banana", "orange", "banana", "apple"];
+  const duplicates = str.filter((item, index) => str.indexOf(item) !== index);
+
+  const uniqueDuplicates = [...new Set(duplicates)];
+  console.log("Duplicate elements:", uniqueDuplicates);
+}
+);
