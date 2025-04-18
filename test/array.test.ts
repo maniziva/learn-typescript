@@ -111,3 +111,18 @@ test("Find Odd/Even an array", () => {
   let oddNumbers: number[] = arr.filter((num) => num % 2 !== 0);
   console.log("Odd Numbers: ", oddNumbers);
 });
+
+test("Reverse an array", () => {
+  let arr: number[] = [1, 3, 4, 5, 2];
+  console.log("Without order: ", arr);
+
+  let reversedArray: number[] = arr.reverse();
+  console.log("Reversed Array: ", reversedArray);
+});
+
+test("Reverse string", () => {
+  let str: string = "Hello World";
+  console.log("Without order: ", str);
+  let reversedString: string = str.split("").reverse().join("");
+  console.log("Reversed String: ", reversedString);
+});
