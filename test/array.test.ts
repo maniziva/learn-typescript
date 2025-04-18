@@ -90,5 +90,24 @@ test("find duplicates in an string array", () => {
 
   const uniqueDuplicates = [...new Set(duplicates)];
   console.log("Duplicate elements:", uniqueDuplicates);
-}
-);
+});
+
+test("Merge two arrays", () => {
+  const arr1: number[] = [1, 2, 3];
+  const arr2: number[] = [4, 5, 6, 1];
+
+  const mergedArray: number[] = [...arr1, ...arr2];
+  const uniqueMergedArray: number[] = [...new Set(mergedArray)];
+  console.log("Merged array:", uniqueMergedArray); // Output: [1, 2, 3, 4, 5, 6]
+});
+
+test("Find Odd/Even an array", () => {
+  let arr: number[] = [1, 3, 4, 5, 2];
+  console.log("Without order: ", arr);
+
+  let evenNumbers: number[] = arr.filter((num) => num % 2 === 0);
+  console.log("Even Numbers: ", evenNumbers);
+
+  let oddNumbers: number[] = arr.filter((num) => num % 2 !== 0);
+  console.log("Odd Numbers: ", oddNumbers);
+});
