@@ -120,13 +120,6 @@ test("Reverse an array", () => {
   console.log("Reversed Array: ", reversedArray);
 });
 
-test("Reverse string", () => {
-  let str: string = "Hello World";
-  console.log("Without order: ", str);
-  let reversedString: string = str.split("").reverse().join("");
-  console.log("Reversed String: ", reversedString);
-});
-
 test('Reverse each word in a string arrays', () => {
   const str: string[] = ["Hello", "World", "JavaScript"];
   console.log("Without order: ", str);
@@ -144,16 +137,4 @@ test('To check if an array is palindrome', () => {
 
   const isPalindrome: boolean = arr.join("") === reversedArray.join("");
   console.log("Is palindrome: ", isPalindrome);}
-);
-
-test('To check if a string is palindrome', () => {
-  const str: string = "madam";
-  console.log("Without order: ", str);
-
-  const reversedString: string = str.split("").reverse().join("");
-  console.log("Reversed String: ", reversedString);
-
-  const isPalindrome: boolean = str === reversedString;
-  console.log("Is palindrome: ", isPalindrome);
-}
 );
