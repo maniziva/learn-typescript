@@ -65,3 +65,15 @@ test('Find if the array is sorted or not', () => {
       };
       console.log(isSorted(arr)); // Output depends on the input array
     });
+
+test('Remove duplicates from an array', () => {
+    let arr: number[] = [1, 3, 4, 5, 1];
+    const removeDuplicates = [...new Set(arr)];
+      console.log("Remove duplicate from an number array: ",removeDuplicates); // Output: [1, 3, 4, 5]
+    
+
+    let arr2: string[] = ["apple", "banana", "apple", "orange"];
+    const removeDuplicates2 = [...new Set(arr2)];
+        console.log("Remove duplicate from an string array: ",removeDuplicates2); // Output: ["apple", "banana", "orange"]
+
+});
