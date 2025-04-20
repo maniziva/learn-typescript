@@ -165,3 +165,17 @@ test('Find the shortest word in an array of strings', () => {
   console.log("Shortest word: ", shortestWord);
 }
 );
+
+test('Find the longest word in an array of strings - using for loop', () => {
+  const str: string[] = ["Hello", "World", "JavaScript"];
+  console.log("Without order: ", str);
+
+  let longestWord: string = "";
+  for (let i = 0; i < str.length; i++) {
+    if (str[i].length > longestWord.length) {
+      longestWord = str[i];
+    }
+  }
+  console.log("Longest word: ", longestWord);
+}
+);
