@@ -16,3 +16,12 @@ test("Reverse string", () => {
     console.log("Is palindrome: ", isPalindrome);
   }
   );
+
+  test('Find vowels in a string', () => {
+    const str: string = "Hello World ABC";
+    console.log("Without order: ", str);
+  
+    const vowels: string[] = str.match(/[aeiou]/gi) || [];
+    console.log("Vowels in the string: ", vowels);
+  }
+  );

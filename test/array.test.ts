@@ -138,3 +138,21 @@ test('To check if an array is palindrome', () => {
   const isPalindrome: boolean = arr.join("") === reversedArray.join("");
   console.log("Is palindrome: ", isPalindrome);}
 );
+
+test.only('Find vowels in an array of strings', () => {
+  const str: string[] = ["Hello", "World", "JavaScript"];
+  console.log("Without order: ", str);
+
+  const vowels: string[] = str.join("").match(/[aeiou]/gi) || [];
+  console.log("Vowels in the array of strings: ", vowels);
+}
+);
+
+test('Find the longest word in an array of strings', () => {
+  const str: string[] = ["Hello", "World", "JavaScript"];
+  console.log("Without order: ", str);
+
+  const longestWord: string = str.reduce((a, b) => (a.length > b.length ? a : b));
+  console.log("Longest word: ", longestWord);
+}
+);
