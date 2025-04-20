@@ -145,6 +145,7 @@ test.only('Find vowels in an array of strings', () => {
 
   const vowels: string[] = str.join("").match(/[aeiou]/gi) || [];
   console.log("Vowels in the array of strings: ", vowels);
+  // const vowels: string[] = str.join("").match(/[^aeiou]/gi) || []; - To find Consonants
 }
 );
 
