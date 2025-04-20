@@ -156,3 +156,12 @@ test('Find the longest word in an array of strings', () => {
   console.log("Longest word: ", longestWord);
 }
 );
+
+test('Find the shortest word in an array of strings', () => {
+  const str: string[] = ["Hello", "World", "JavaScript"];
+  console.log("Without order: ", str);
+
+  const shortestWord: string = str.reduce((a, b) => (a.length < b.length ? a : b));
+  console.log("Shortest word: ", shortestWord);
+}
+);
