@@ -180,3 +180,31 @@ test('Find the longest word in an array of strings - using for loop', () => {
   console.log("Longest word: ", longestWord);
 }
 );
+
+
+test.only('For In - Loop through an array', () => {
+  const arr: number[] = [1, 2, 3, 4, 5];
+  console.log("Without order: ", arr);
+
+  for (let index in arr) {
+    console.log(`Index: ${index}, Value: ${arr[index]}`);
+  }
+});
+
+test('For Of - Loop through an array', () => {
+  const arr: number[] = [1, 2, 3, 4, 5];
+  console.log("Without order: ", arr);
+
+  for (let value of arr) {
+    console.log(`Value: ${value}`);
+  }
+});
+test('For Each - Loop through an array', () => {
+  const arr: number[] = [1, 2, 3, 4, 5];
+  console.log("Without order: ", arr);
+
+  arr.forEach((value, index) => {
+    console.log(`Index: ${index}, Value: ${value}`);
+  });
+}
+);
