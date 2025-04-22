@@ -139,7 +139,7 @@ test('To check if an array is palindrome', () => {
   console.log("Is palindrome: ", isPalindrome);}
 );
 
-test.only('Find vowels in an array of strings', () => {
+test('Find vowels in an array of strings', () => {
   const str: string[] = ["Hello", "World", "JavaScript"];
   console.log("Without order: ", str);
 
@@ -181,8 +181,7 @@ test('Find the longest word in an array of strings - using for loop', () => {
 }
 );
 
-
-test.only('For In - Loop through an array', () => {
+test('For In - Loop through an array', () => {
   const arr: number[] = [1, 2, 3, 4, 5];
   console.log("Without order: ", arr);
 
