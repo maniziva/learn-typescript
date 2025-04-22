@@ -198,6 +198,7 @@ test('For Of - Loop through an array', () => {
     console.log(`Value: ${value}`);
   }
 });
+
 test('For Each - Loop through an array', () => {
   const arr: number[] = [1, 2, 3, 4, 5];
   console.log("Without order: ", arr);
@@ -205,5 +206,23 @@ test('For Each - Loop through an array', () => {
   arr.forEach((value, index) => {
     console.log(`Index: ${index}, Value: ${value}`);
   });
+}
+);
+
+test('Map - Loop through an array', () => {
+  const arr: number[] = [1, 2, 3, 4, 5];
+  console.log("Without order: ", arr);
+
+  const mappedArray: number[] = arr.map((value) => value * 2);
+  console.log("Mapped Array: ", mappedArray);
+}
+);
+
+test('Filter - Loop through an array', () => {
+  const arr: number[] = [1, 2, 3, 4, 5];
+  console.log("Without order: ", arr);
+
+  const filteredArray: number[] = arr.filter((value) => value > 2);
+  console.log("Filtered Array: ", filteredArray);
 }
 );
