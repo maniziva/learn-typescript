@@ -39,6 +39,13 @@ test("Find max/Min numbers", () => {
 
   let min: number = Math.min(...arr);
   console.log("Min number: ", min);
+ 
+  // Using reduce
+  let maxi: number = arr.reduce((a,b) => a>b ? a:b);
+  console.log(maxi);
+
+  let mini: number = arr.reduce((a,b) => a<b ? a:b);
+  console.log(mini);
 });
 
 test("Find if the array is sorted or not", () => {
