@@ -39,33 +39,32 @@ test("Find max/Min numbers", () => {
 
   let min: number = Math.min(...arr);
   console.log("Min number: ", min);
- 
+
   // Using reduce
-  let maxi: number = arr.reduce((a,b) => a>b ? a:b);
+  let maxi: number = arr.reduce((a, b) => (a > b ? a : b));
   console.log(maxi);
 
-  let mini: number = arr.reduce((a,b) => a<b ? a:b);
+  let mini: number = arr.reduce((a, b) => (a < b ? a : b));
   console.log(mini);
 });
 
 test("Find if the array is sorted or not", () => {
   const arr: number[] = [1, 3, 4, 5, 1];
-  const isSorted = ((arr: number[])=>{
+  const isSorted = (arr: number[]) => {
     let isAsc: boolean = true;
     let isDesc: boolean = true;
-      
-        for (let i = 1; i < arr.length; i++) {
-        if (arr[i] > arr[i - 1]) isDesc = false;
-        if (arr[i] < arr[i - 1]) isAsc = false;
-      }
-    
-      if (isAsc) return "Array is sorted in ascending order";
-      if (isDesc) return "Array is sorted in descending order";
-      return "Array is not sorted";
-    });
-    
-    
-    console.log(isSorted(arr));  // Output: Array is not sorted
+
+    for (let i = 1; i < arr.length; i++) {
+      if (arr[i] > arr[i - 1]) isDesc = false;
+      if (arr[i] < arr[i - 1]) isAsc = false;
+    }
+
+    if (isAsc) return "Array is sorted in ascending order";
+    if (isDesc) return "Array is sorted in descending order";
+    return "Array is not sorted";
+  };
+
+  console.log(isSorted(arr)); // Output: Array is not sorted
 });
 
 test("Remove duplicates from an array", () => {
@@ -79,19 +78,36 @@ test("Remove duplicates from an array", () => {
 });
 
 test("find duplicates in an array", () => {
-  const nums: number[] = [1, 2, 3, 2, 4, 5, 1, 6, 4];
-  const duplicates = nums.filter((item, index) => nums.indexOf(item) !== index);
+  const arr: number[] = [1, 2, 3, 2, 4, 5, 1, 6, 4, 2, 2, 2, 2];
 
-  const uniqueDuplicates = [...new Set(duplicates)];
-  console.log("Duplicate elements:", uniqueDuplicates);
+  const seen: number[] = [];
+  const duplicates: number[] = [];
+
+  arr.forEach((num: number) => {
+    if (seen.includes(num)) {
+      duplicates.push(num);
+    } else {
+      seen.push(num);
+    }
+  });
+
+  console.log([...new Set(duplicates)]); // Output: [2, 1, 4]
 });
 
 test("find duplicates in an string array", () => {
-  const str: string[] = ["apple", "banana", "orange", "banana", "apple"];
-  const duplicates = str.filter((item, index) => str.indexOf(item) !== index);
+  const str: string[] = ["apple", "banana", "orange", "banana", "apple", "apple"];
 
-  const uniqueDuplicates = [...new Set(duplicates)];
-  console.log("Duplicate elements:", uniqueDuplicates);
+  const seen: string[] = [];
+  const duplicate: string[] = [];
+
+  str.forEach((item) => {
+    if (seen.includes(item)) {
+      duplicate.push(item);
+    } else {
+      seen.push(item);
+    }
+  });
+  console.log([...new Set(duplicate)]);
 });
 
 test("Merge two arrays", () => {
@@ -122,15 +138,17 @@ test("Reverse an array", () => {
   console.log("Reversed Array: ", reversedArray);
 });
 
-test('Reverse each word in a string arrays', () => {
+test("Reverse each word in a string arrays", () => {
   const str: string[] = ["Hello", "World", "JavaScript"];
   console.log("Without order: ", str);
 
-  const reversedWords: string[] = str.map((word) => word.split("").reverse().join(""));
+  const reversedWords: string[] = str.map((word) =>
+    word.split("").reverse().join("")
+  );
   console.log("Reversed words: ", reversedWords);
 });
 
-test('To check if an array is palindrome', () => {
+test("To check if an array is palindrome", () => {
   const arr: number[] = [1, 2, 3, 2, 1];
   console.log("Without order: ", arr);
 
@@ -138,38 +156,39 @@ test('To check if an array is palindrome', () => {
   console.log("Reversed Array: ", reversedArray);
 
   const isPalindrome: boolean = arr.join("") === reversedArray.join("");
-  console.log("Is palindrome: ", isPalindrome);}
-);
+  console.log("Is palindrome: ", isPalindrome);
+});
 
-test('Find vowels in an array of strings', () => {
+test("Find vowels in an array of strings", () => {
   const str: string[] = ["Hello", "World", "JavaScript"];
   console.log("Without order: ", str);
 
   const vowels: string[] = str.join("").match(/[aeiou]/gi) || [];
   console.log("Vowels in the array of strings: ", vowels);
   // const vowels: string[] = str.join("").match(/[^aeiou]/gi) || []; - To find Consonants
-}
-);
+});
 
-test('Find the longest word in an array of strings', () => {
+test("Find the longest word in an array of strings", () => {
   const str: string[] = ["Hello", "World", "JavaScript"];
   console.log("Without order: ", str);
 
-  const longestWord: string = str.reduce((a, b) => (a.length > b.length ? a : b));
+  const longestWord: string = str.reduce((a, b) =>
+    a.length > b.length ? a : b
+  );
   console.log("Longest word: ", longestWord);
-}
-);
+});
 
-test('Find the shortest word in an array of strings', () => {
+test("Find the shortest word in an array of strings", () => {
   const str: string[] = ["Hello", "World", "JavaScript"];
   console.log("Without order: ", str);
 
-  const shortestWord: string = str.reduce((a, b) => (a.length < b.length ? a : b));
+  const shortestWord: string = str.reduce((a, b) =>
+    a.length < b.length ? a : b
+  );
   console.log("Shortest word: ", shortestWord);
-}
-);
+});
 
-test('Find the longest word in an array of strings - using for loop', () => {
+test("Find the longest word in an array of strings - using for loop", () => {
   const str: string[] = ["Hello", "World", "JavaScript"];
   console.log("Without order: ", str);
 
@@ -180,10 +199,9 @@ test('Find the longest word in an array of strings - using for loop', () => {
     }
   }
   console.log("Longest word: ", longestWord);
-}
-);
+});
 
-test('For In - Loop through an array', () => {
+test("For In - Loop through an array", () => {
   const arr: number[] = [1, 2, 3, 4, 5];
   console.log("Without order: ", arr);
 
@@ -192,7 +210,7 @@ test('For In - Loop through an array', () => {
   }
 });
 
-test('For Of - Loop through an array', () => {
+test("For Of - Loop through an array", () => {
   const arr: number[] = [1, 2, 3, 4, 5];
   console.log("Without order: ", arr);
 
@@ -201,30 +219,27 @@ test('For Of - Loop through an array', () => {
   }
 });
 
-test('For Each - Loop through an array', () => {
+test("For Each - Loop through an array", () => {
   const arr: number[] = [1, 2, 3, 4, 5];
   console.log("Without order: ", arr);
 
   arr.forEach((value, index) => {
     console.log(`Index: ${index}, Value: ${value}`);
   });
-}
-);
+});
 
-test('Map - Loop through an array', () => {
+test("Map - Loop through an array", () => {
   const arr: number[] = [1, 2, 3, 4, 5];
   console.log("Without order: ", arr);
 
   const mappedArray: number[] = arr.map((value) => value * 2);
   console.log("Mapped Array: ", mappedArray);
-}
-);
+});
 
-test('Filter - Loop through an array', () => {
+test("Filter - Loop through an array", () => {
   const arr: number[] = [1, 2, 3, 4, 5];
   console.log("Without order: ", arr);
 
   const filteredArray: number[] = arr.filter((value) => value > 2);
   console.log("Filtered Array: ", filteredArray);
-}
-);
+});
