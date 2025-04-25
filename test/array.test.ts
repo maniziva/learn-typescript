@@ -49,28 +49,23 @@ test("Find max/Min numbers", () => {
 });
 
 test("Find if the array is sorted or not", () => {
-  let arr: number[] = [1, 3, 4, 5, 1];
-  const isSorted = (arr: number[]) => {
-    let ascendingOrder: boolean = true;
-    let descendingOrder: boolean = true;
-
-    for (let i = 1; i < arr.length; i++) {
-      if (arr[i] < arr[i - 1]) {
-        ascendingOrder = false;
-      } else if (arr[i] > arr[i - 1]) {
-        descendingOrder = false;
+  const arr: number[] = [1, 3, 4, 5, 1];
+  const isSorted = ((arr: number[])=>{
+    let isAsc: boolean = true;
+    let isDesc: boolean = true;
+      
+        for (let i = 1; i < arr.length; i++) {
+        if (arr[i] > arr[i - 1]) isDesc = false;
+        if (arr[i] < arr[i - 1]) isAsc = false;
       }
-    }
-
-    if (ascendingOrder) {
-      return "Array is sorted in ascending order";
-    } else if (descendingOrder) {
-      return "Array is sorted in descending order";
-    } else {
+    
+      if (isAsc) return "Array is sorted in ascending order";
+      if (isDesc) return "Array is sorted in descending order";
       return "Array is not sorted";
-    }
-  };
-  console.log(isSorted(arr)); // Output depends on the input array
+    });
+    
+    
+    console.log(isSorted(arr));  // Output: Array is not sorted
 });
 
 test("Remove duplicates from an array", () => {
