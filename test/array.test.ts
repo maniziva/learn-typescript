@@ -252,3 +252,12 @@ test("Filter - Loop through an array", () => {
   const filteredArray: number[] = arr.filter((value) => value > 2);
   console.log("Filtered Array: ", filteredArray);
 });
+
+test("Map - Odd Even for all elemets", () => {
+  const arr = [1,4,3,5,6,7,199901,1];
+  const small = arr.map((a) => {
+  if (a%2===0) return `${a} - is even number`;
+  else return `${a} - is odd number`;
+  })
+console.log(small);
+})
