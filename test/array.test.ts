@@ -263,13 +263,7 @@ test("Map - Odd Even for all elemets", () => {
   const small = arr.map((a) => {
   if (a%2===0) return `${a} - is even number`;
   else return `${a} - is odd number`;
-  })
-console.log(small);
-})
-
-test('Find number of A from the string', () => {
-  const str = "Manikandan Adaikalam";
-  const regex = /a/gi;
-  const matches = str.match(regex);
-  console.log(matches?.length);
   });
+console.log(small);
+});
+
