@@ -225,6 +225,11 @@ test("For Of - Loop through an array", () => {
 
   for (let value of arr) {
     console.log(`Value: ${value}`);
+
+	for(let value of arr){
+			if(value%2===0) console.log(`${value} is Even numver`)
+			else console.log(`${value} is Odd numver`)
+		}
   }
 });
 
@@ -261,3 +266,10 @@ test("Map - Odd Even for all elemets", () => {
   })
 console.log(small);
 })
+
+test('Find number of A from the string', () => {
+  const str = "Manikandan Adaikalam";
+  const regex = /a/gi;
+  const matches = str.match(regex);
+  console.log(matches?.length);
+  });
