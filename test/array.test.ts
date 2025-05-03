@@ -267,3 +267,37 @@ test("Map - Odd Even for all elemets", () => {
 console.log(small);
 });
 
+test("Count number of duplicates in an array", () => {
+  const arr: number[] = [1, 2, 3, 2, 4, 5, 1, 6, 4, 2, 2, 2, 2];
+
+  const seen: number[] = [];
+  const duplicates: number[] = [];
+
+  arr.forEach((num: number) => {
+    if (seen.includes(num)) {
+      duplicates.push(num);
+    } else {
+      seen.push(num);
+    }
+  });
+  const Count = [...new Set(duplicates)];
+  console.log(Count); // Output: [2, 1, 4]
+  console.log(Count.length); // Output: [2, 1, 4]
+});
+
+
+test.only('Find index of an element in an array', () => {
+  const arr: string[] = ["1", "2", "3", "4", "5", "8"];
+
+  function findIndex(arr: string[], element: string): number {
+    for (let i = 0; i < arr.length; i++) {
+      if (arr[i] === element) {
+        return i;
+      }
+    }
+    return -1; // Element not found
+  } 
+  const index: number = findIndex(arr, "3");
+  console.log("Index of element: ", index); // Output: 2
+
+});
