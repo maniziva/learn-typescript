@@ -5,6 +5,14 @@ test("Reverse string", () => {
   console.log("Reversed String: ", reversedString);
 });
 
+test('Find Reverse of a string without using built-in method', ()=>{
+  const str = "Manikandan Adaikalam";
+  let reversedString = '';
+  for (let i = str.length - 1; i >= 0; i--) {
+    reversedString = reversedString + str[i];  }
+  console.log(reversedString);
+});
+
 test("To check if a string is palindrome", () => {
   const str: string = "madam";
   console.log("Without order: ", str);
