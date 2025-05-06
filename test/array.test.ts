@@ -285,8 +285,7 @@ test("Count number of duplicates in an array", () => {
   console.log(Count.length); // Output: [2, 1, 4]
 });
 
-
-test.only('Find index of an element in an array', () => {
+test('Find index of an element in an array', () => {
   const arr: string[] = ["1", "2", "3", "4", "5", "8"];
 
   function findIndex(arr: string[], element: string): number {

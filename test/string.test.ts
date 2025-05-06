@@ -36,3 +36,10 @@ test("Find a from the string and replace A", () => {
   const matches = str.replace(/a/gi, "A");
   console.log(matches);
 });
+
+test('Find longest word in a sentence', () => {
+  const str = "The quick brown fox jumps over the lazy dog!";
+  const longestWord = str.split(' ').reduce((a, b) => a.length > b.length ? a : b);
+  console.log(longestWord);
+}
+);
