@@ -63,7 +63,7 @@ test('Count repeated characters in a string', () => {
   console.log(repeatedChars);
 });
 
-test.only('Count repeated numbers in a string - using regex', () => {
+test('Count repeated numbers in a string - using regex', () => {
   const str = "Manikandan Adaikalam1232";
   const charCount: { [key: string]: number } = {};
   const regex = /[0-9]/g;
