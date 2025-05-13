@@ -300,3 +300,14 @@ test('Find index of an element in an array', () => {
   console.log("Index of element: ", index); // Output: 2
 
 });
+
+
+test('Find second largest number in an array', () => {
+  const arr: number[] = [1, 2, 3, 4, 5, 8];
+  console.log("Without order: ", arr);
+
+const largest = Math.max(...arr);
+const secondLargest = Math.max(...arr.filter(num => num !== largest));
+console.log("Second largest number: ", secondLargest); // Output: 5
+}
+);
