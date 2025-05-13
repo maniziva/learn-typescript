@@ -5,11 +5,12 @@ test("Reverse string", () => {
   console.log("Reversed String: ", reversedString);
 });
 
-test('Find Reverse of a string without using built-in method', ()=>{
+test("Find Reverse of a string without using built-in method", () => {
   const str = "Manikandan Adaikalam";
-  let reversedString = '';
+  let reversedString = "";
   for (let i = str.length - 1; i >= 0; i--) {
-    reversedString = reversedString + str[i];  }
+    reversedString = reversedString + str[i];
+  }
   console.log(reversedString);
 });
 
@@ -45,25 +46,28 @@ test("Find a from the string and replace A", () => {
   console.log(matches);
 });
 
-test('Find longest word in a sentence', () => {
+test("Find longest word in a sentence", () => {
   const str = "The quick brown fox jumps over the lazy dog!";
-  const longestWord = str.split(' ').reduce((a, b) => a.length > b.length ? a : b);
+  const longestWord = str
+    .split(" ")
+    .reduce((a, b) => (a.length > b.length ? a : b));
   console.log(longestWord);
-}
-);
+});
 
-test('Count repeated characters in a string', () => {
+test("Count repeated characters in a string", () => {
   const str = "Manikandan Adaikalam";
   const charCount: { [key: string]: number } = {};
   for (const char of str) {
     charCount[char] = (charCount[char] || 0) + 1;
   }
   console.log(charCount);
-  const repeatedChars = Object.entries(charCount).filter(([char, count]) => count > 1);
+  const repeatedChars = Object.entries(charCount).filter(
+    ([char, count]) => count > 1
+  );
   console.log(repeatedChars);
 });
 
-test('Count repeated numbers in a string - using regex', () => {
+test("Count repeated numbers in a string - using regex", () => {
   const str = "Manikandan Adaikalam1232";
   const charCount: { [key: string]: number } = {};
   const regex = /[0-9]/g;
@@ -74,6 +78,8 @@ test('Count repeated numbers in a string - using regex', () => {
     }
   }
   console.log(charCount);
-  const repeatedChars = Object.entries(charCount).filter(([char, count]) => count > 1);
+  const repeatedChars = Object.entries(charCount).filter(
+    ([char, count]) => count > 1
+  );
   console.log(repeatedChars);
 });
