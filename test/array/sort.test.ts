@@ -46,3 +46,10 @@ test("Sort with custom object", () => {
   arr.sort((a, b) => a.age - b.age);
   console.log(arr); // Sorted by age in ascending order
 });
+
+
+test('Sort with spread Operator', () => {
+  const arr = [10, 2, 8, 7, 6, 3, 9, 1, 4, 5];
+  const sortedArr = [...arr].sort((a, b) => a - b);
+  console.log(sortedArr); // [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+});
