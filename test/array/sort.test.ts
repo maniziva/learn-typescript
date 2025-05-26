@@ -98,4 +98,23 @@ test("Sort by using functions", () => {
 
   console.log("Ascending Order: ", ascending(arr));
   console.log("Descending Order: ", descending(arr));
+
+  console.log(`Largest number is: ${ascending(arr).slice(-1)}`);
+  console.log(`Largest number is: ${ascending(arr)[arr.length - 1]}`);
+
+});
+
+test('Sort without mutating original array', () => {
+  const arr = [10, 2, 8, 7, 6, 3, 9, 1, 4, 5];
+  const sortedArr = [...arr].sort((a, b) => a - b);
+  console.log("Original Array: ", arr); // Original array remains unchanged
+  console.log("Sorted Array: ", sortedArr); // Sorted array
+  expect(arr).toEqual([10, 2, 8, 7, 6, 3, 9, 1, 4, 5]);
+  expect(sortedArr).toEqual([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
+
+
+  const arr2 = [10, 2, 8, 7, 6, 3, 9, 1, 4, 5];
+  const sortedArr2 = arr2.slice().sort((a, b) => a - b);
+  console.log("Original Array: ", arr2); // Original array remains unchanged
+  console.log("Sorted Array: ", sortedArr2); // Sorted array  
 });
