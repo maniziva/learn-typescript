@@ -25,3 +25,23 @@ test("Find second largest number in an array", () => {
   const secondLargest = Math.max(...arr.filter((num) => num !== largest));
   console.log("Second largest number: ", secondLargest); // Output: 5
 });
+
+test("Filter - Find duplicates from an array", () => {
+  const arr: number[] = [1, 2, 3, 4, 5, 1, 2];
+  console.log("Original array: ", arr);
+
+  const duplicates: number[] = arr.filter(
+    (item, index) => arr.indexOf(item) !== index
+  );
+  console.log("Duplicates: ", duplicates); // Output: [1, 2]
+});
+
+test("Filter - Find unique values from an array", () => {
+  const arr: number[] = [1, 2, 3, 4, 5, 1, 2];
+  console.log("Original array: ", arr);
+
+  const uniqueValues: number[] = arr.filter(
+    (item, index) => arr.indexOf(item) === index
+  );
+  console.log("Unique values: ", uniqueValues); // Output: [1, 2, 3, 4, 5]
+});
