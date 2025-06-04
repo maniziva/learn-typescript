@@ -88,3 +88,18 @@ test("Find the first non-repeated character in a string", () => {
     console.log("Non Repeated character is: ", nonRepeatedmap);
   } else console.log("There is no - non repeated characters");
 });
+
+test("Find the frequency of each word in a sentence", () => {
+  const sentence = "I am learning TypeScript and I love learning";
+  const wordCount: { [key: string]: number } = {};
+
+  // Step 1: Split sentence into words
+  const words = sentence.split(" ");
+
+  // Step 2: Count frequency of each word
+  for (const word of words) {
+    wordCount[word] = (wordCount[word] || 0) + 1;
+  }
+
+  console.log(wordCount);
+});
