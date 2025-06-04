@@ -65,6 +65,11 @@ test("Count repeated characters in a string", () => {
     ([char, count]) => count > 1
   );
   console.log(repeatedChars);
+
+  const [maxChar, maxCount] = Object.entries(charCount).reduce((a, b) =>
+    a[1] > b[1] ? a : b
+  );
+  console.log(`Character :${maxChar} is repeated at :${maxCount} times`);
 });
 
 test("Count repeated numbers in a string - using regex", () => {
