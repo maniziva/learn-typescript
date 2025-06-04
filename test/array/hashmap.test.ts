@@ -69,3 +69,22 @@ test("Count repeated characters in a each string array", () => {
     console.log(`In "${word}" → Repeated chars:`, repeatmap);
   });
 });
+
+test("Find the first non-repeated character in a string", () => {
+  const str: string = "Manikandan";
+  const charCount: { [key: string]: number } = {};
+
+  for (const char of str) {
+    charCount[char] = (charCount[char] || 0) + 1;
+  }
+
+  console.log(charCount);
+  const nonRepeated = Object.entries(charCount).find(
+    ([char, count]) => count === 1
+  );
+
+  if (nonRepeated) {
+    const nonRepeatedmap = Object.fromEntries([nonRepeated]);
+    console.log("Non Repeated character is: ", nonRepeatedmap);
+  } else console.log("There is no - non repeated characters");
+});
