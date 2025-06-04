@@ -1,0 +1,38 @@
+test("Reverse an array", () => {
+  let arr: number[] = [1, 3, 4, 5, 2];
+  console.log("Without order: ", arr);
+
+  let reversedArray: number[] = arr.reverse();
+  console.log("Reversed Array: ", reversedArray);
+});
+
+test("Reverse an string using for loop", () => {
+  const arr: string = "Manikandan";
+  let rev = "";
+
+  for (let i = arr.length - 1; i >= 0; i--) {
+    rev = rev + arr[i];
+  }
+  console.log(rev);
+});
+
+test("Reverse an array using for loop", () => {
+  const arr: number[] = [1, 3, 4, 5, 2];
+  let rev: number[] = [];
+
+  for (let i = arr.length - 1; i >= 0; i--) {
+    rev.push(arr[i]);
+  }
+  console.log(rev);
+});
+
+test("To check if an array is palindrome", () => {
+  const arr: number[] = [1, 2, 3, 2, 1];
+  console.log("Without order: ", arr);
+
+  const reversedArray: number[] = arr.reverse();
+  console.log("Reversed Array: ", reversedArray);
+
+  const isPalindrome: boolean = arr.join("") === reversedArray.join("");
+  console.log("Is palindrome: ", isPalindrome);
+});
