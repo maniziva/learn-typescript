@@ -26,6 +26,23 @@ test("Reverse an array using for loop", () => {
   console.log(rev);
 });
 
+test("Reverse an array of each strings using for loop", () => {
+  const str: string[] = ["Manikandan", "adaikalam"];
+
+  let rev: string[] = [];
+  let revword = "";
+
+  for (let i = str.length - 1; i >= 0; i--) {
+    const word = str[i];
+    for (let j = word.length - 1; j >= 0; j--) {
+      revword = revword + word[j];
+    }
+    rev.push(revword);
+  }
+
+  console.log(rev);
+});
+
 test("To check if an array is palindrome", () => {
   const arr: number[] = [1, 2, 3, 2, 1];
   console.log("Without order: ", arr);
