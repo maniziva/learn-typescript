@@ -11,14 +11,16 @@ test('Get Date and Time', () => {
 });
 
 test('Find factorial of a number', () => {
-    const num: number = 5;
-    let factorial: number = 1;
     
-    for (let i = 1; i <= num; i++) {
-        factorial = factorial * i;
+    function factorial(num: number) {
+        let fact : number = 1;
+        for(let i = 1; i<=num; i++){
+            fact *= i;
         }
+        return fact;
+    }
     
-    console.log(`Factorial of ${num} is ${factorial}`);
+    console.log(factorial(5));
 });
 
 test('without dayjs lib', ()=>{
