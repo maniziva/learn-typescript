@@ -10,6 +10,7 @@ test("Get Date and Time", () => {
 
 test("Find factorial of a number", () => {
   function factorial(num: number) {
+    if(num<0) throw new Error ("Given input is negative");
     let fact: number = 1;
     for (let i = 1; i <= num; i++) {
       fact *= i;
@@ -22,6 +23,8 @@ test("Find factorial of a number", () => {
 
 test("Find factorial of a number array", () => {
   function factorial(n: number) {
+    if(n<0) throw new Error ("Given input is negative");
+
     let fact: number = 1;
     for (let i = 1; i <= n; i++) {
       fact *= i;
