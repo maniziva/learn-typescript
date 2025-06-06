@@ -53,3 +53,15 @@ test("Find longest word in a sentence", () => {
     .reduce((a, b) => (a.length > b.length ? a : b));
   console.log(longestWord);
 });
+
+test("Find number of A from the string - using loop", () => {
+  const num: string = "Manikandan";
+  let count = 0;
+
+  for (let item of num) {
+    if (item.includes("a")) {
+      count += 1;
+    }
+  }
+  console.log(count);
+});
