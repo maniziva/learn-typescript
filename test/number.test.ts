@@ -75,3 +75,18 @@ test("Get birth year of given number array", () => {
     console.log(`Born in ${year} → Age: ${birthYear(year)}`);
   });
 });
+
+test("Find the maximum number of consecutive 1s in a binary array", () => {
+  const num: number[] = [1, 2, 3, 4, 56, 1, 1, 1, 1, 3, 3];
+  console.log(num);
+
+  let count = 0;
+  let max = 0;
+
+  for (let item of num) {
+    count = item === 1 ? count + 1 : 0;
+    max = Math.max(max, count);
+  }
+
+  console.log(max);
+});
