@@ -94,3 +94,13 @@ test("Find index of an element in an array", () => {
   const index: number = findIndex(arr, "3");
   console.log("Index of element: ", index); // Output: 2
 });
+
+test("search for an element in an array and return its index", () => {
+  const num: number[] = [12, 10, 2, 52, -12];
+  console.log(num);
+  const tar: number = 12;
+
+  if (num.includes(tar)) {
+    console.log(`${tar} is at the inde of ${num.indexOf(tar)}`);
+  } else console.log(`Element ${tar} not found in the array.`);
+});
