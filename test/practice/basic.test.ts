@@ -1,22 +1,3 @@
-test("Find if the array is sorted or not", () => {
-  const arr: number[] = [1, 3, 4, 5, 1];
-  const isSorted = (arr: number[]) => {
-    let isAsc: boolean = true;
-    let isDesc: boolean = true;
-
-    for (let i = 1; i < arr.length; i++) {
-      if (arr[i] > arr[i - 1]) isDesc = false;
-      if (arr[i] < arr[i - 1]) isAsc = false;
-    }
-
-    if (isAsc) return "Array is sorted in ascending order";
-    if (isDesc) return "Array is sorted in descending order";
-    return "Array is not sorted";
-  };
-
-  console.log(isSorted(arr)); // Output: Array is not sorted
-});
-
 test("Find the longest word in an array of strings - using for loop", () => {
   const str: string[] = ["Hello", "World", "JavaScript"];
   console.log("Without order: ", str);
