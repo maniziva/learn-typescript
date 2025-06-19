@@ -53,3 +53,9 @@ test("To check if an array is palindrome", () => {
   const isPalindrome: boolean = arr.join("") === reversedArray.join("");
   console.log("Is palindrome: ", isPalindrome);
 });
+
+test("To reverse a sentence", () => {
+  const str: string = "Im Manikandan from Rayavaram";
+  const rev = str.split(" ").map((item) => item.split("").reverse().join("")).reverse();
+  console.log(rev);
+});
