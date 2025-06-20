@@ -23,17 +23,17 @@ test("without sort function", () => {
   const arr = [10, 2, 8, 7, 6, 3, 9, 1, 4, 5];
 
   function asc(arr: number[]) {
-  for (let i = 0; i < arr.length; i++) {
-    for (let j = i + 1; j < arr.length; j++) {
-      if (arr[i] > arr[j]) {
-        // Swap elements
-        const temp = arr[i];
-        arr[i] = arr[j];
-        arr[j] = temp;
+    for (let i = 0; i < arr.length; i++) {
+      for (let j = i + 1; j < arr.length; j++) {
+        if (arr[i] > arr[j]) {
+          // Swap elements
+          const temp = arr[i];
+          arr[i] = arr[j];
+          arr[j] = temp;
+        }
       }
     }
-  }
-return arr;
+    return arr;
   }
   console.log(arr); // [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 });
@@ -103,10 +103,9 @@ test("Sort by using functions", () => {
 
   console.log(`Largest number is: ${ascending(arr).slice(-1)}`);
   console.log(`Largest number is: ${ascending(arr)[arr.length - 1]}`);
-
 });
 
-test('Sort without mutating original array', () => {
+test("Sort without mutating original array", () => {
   const arr = [10, 2, 8, 7, 6, 3, 9, 1, 4, 5];
   const sortedArr = [...arr].sort((a, b) => a - b);
   console.log("Original Array: ", arr); // Original array remains unchanged
@@ -114,11 +113,10 @@ test('Sort without mutating original array', () => {
   expect(arr).toEqual([10, 2, 8, 7, 6, 3, 9, 1, 4, 5]);
   expect(sortedArr).toEqual([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
 
-
   const arr2 = [10, 2, 8, 7, 6, 3, 9, 1, 4, 5];
   const sortedArr2 = arr2.slice().sort((a, b) => a - b);
   console.log("Original Array: ", arr2); // Original array remains unchanged
-  console.log("Sorted Array: ", sortedArr2); // Sorted array  
+  console.log("Sorted Array: ", sortedArr2); // Sorted array
 });
 
 test("Find if the array is sorted or not", () => {
@@ -138,4 +136,75 @@ test("Find if the array is sorted or not", () => {
   };
 
   console.log(isSorted(arr)); // Output: Array is not sorted
+});
+
+test("Ascending order - using Bubble Sort Algorithm", () => {
+  function bubbleSort(arr: number[]): number[] {
+    let n = arr.length;
+    let swapped: boolean;
+
+    // Outer loop for passes
+    for (let i = 0; i < n - 1; i++) {
+      swapped = false;
+
+      // Inner loop for pairwise comparisons
+      for (let j = 0; j < n - i - 1; j++) {
+        if (arr[j] > arr[j + 1]) {
+          // Swap arr[j] and arr[j+1]
+          let temp = arr[j];
+          arr[j] = arr[j + 1];
+          arr[j + 1] = temp;
+
+          swapped = true;
+        }
+      }
+
+      // If no elements were swapped, array is already sorted
+      if (!swapped) {
+        break;
+      }
+    }
+
+    return arr;
+  }
+
+  const numbers = [5, 2, 9, 1, 5, 6];
+  console.log(`Original Array: ${numbers}`);
+
+  const sortedArray = bubbleSort(numbers);
+  console.log(`Sorted Array: ${sortedArray}`);
+});
+
+test("Descending order - using Bubble Sort Algorithm", () => {
+  function bubbleSortDescending(arr: number[]): number[] {
+    let n = arr.length;
+    let swapped: boolean;
+
+    for (let i = 0; i < n - 1; i++) {
+      swapped = false;
+
+      for (let j = 0; j < n - i - 1; j++) {
+        if (arr[j] < arr[j + 1]) {
+          // Swap arr[j] and arr[j+1]
+          let temp = arr[j];
+          arr[j] = arr[j + 1];
+          arr[j + 1] = temp;
+
+          swapped = true;
+        }
+      }
+
+      if (!swapped) {
+        break;
+      }
+    }
+
+    return arr;
+  }
+
+  const numbers = [5, 2, 9, 1, 5, 6];
+  console.log(`Original Array: ${numbers}`);
+
+  const sortedDescending = bubbleSortDescending(numbers);
+  console.log(`Sorted in Descending Order: ${sortedDescending}`);
 });
