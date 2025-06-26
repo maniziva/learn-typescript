@@ -2,7 +2,7 @@
 
 test("Basic test - Variables", () => {
   let a: number = 1;
-  console.log(`a value is= ${a}`);
+  console.log(`a value is ${a}`);
   let b: string = "hello";
   console.log(b);
   let c: boolean = true;
