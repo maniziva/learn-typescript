@@ -142,8 +142,17 @@ test("Replace the characters using hashmap", () => {
   let result = "";
 
   for (const char of str) {
-    result += map[char] ?? char;
+    result += map[char] || char;
   }
 
   console.log(result);
+});
+
+test("Replace the characters using hashmap and replace method", () => {
+  const str: string = "tomorrow";
+
+  const map: { [key: string]: string } = { o: "3", r: "2", t: "4" };
+
+  const rep = str.replace(/[ort]/gi, (char) => map[char]);
+  console.log(rep);
 });
