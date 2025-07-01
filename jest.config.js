@@ -1,6 +1,6 @@
 module.exports = {
   testEnvironment: 'node',
-  testMatch: ['**/test/**/array.test.ts'],
+  testMatch: ['**/test/**/hashmap.test.ts'],
   transform: {
     '^.+\\.ts$': 'ts-jest',
   },

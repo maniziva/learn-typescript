@@ -104,31 +104,46 @@ test("Find the frequency of each word in a sentence", () => {
   console.log(wordCount);
 });
 
-
-test('check if two string are anagram', ()=>{
+test("check if two string are anagram", () => {
   function isAnagram(str1: string, str2: string): boolean {
     if (str1.length !== str2.length) return false;
-  
+
     const count1: { [key: string]: number } = {};
     const count2: { [key: string]: number } = {};
-  
+
     for (const char of str1) {
       count1[char] = (count1[char] || 0) + 1;
     }
-  
+
     for (const char of str2) {
       count2[char] = (count2[char] || 0) + 1;
     }
-  
+
     const sortedCount1 = Object.entries(count1).sort();
     const sortedCount2 = Object.entries(count2).sort();
-  
-  
+
     return JSON.stringify(sortedCount1) === JSON.stringify(sortedCount2);
   }
-  
+
   const str1: string = "anim";
   const str2: string = "mani";
-  
+
   console.log(isAnagram(str1, str2)); // ✅ true
-})
+});
+
+test("Replace the characters using hashmap", () => {
+  const str: string = "tomorrow";
+
+  const map: { [key: string]: string } = {
+    o: "3",
+    r: "2",
+  };
+
+  let result = "";
+
+  for (const char of str) {
+    result += map[char] ?? char;
+  }
+
+  console.log(result);
+});
