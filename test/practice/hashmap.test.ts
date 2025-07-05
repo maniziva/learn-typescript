@@ -87,6 +87,9 @@ test("Find the first non-repeated character in a string", () => {
     const nonRepeatedmap = Object.fromEntries([nonRepeated]);
     console.log("Non Repeated character is: ", nonRepeatedmap);
   } else console.log("There is no - non repeated characters");
+
+  const repkey = nonRepeated ? nonRepeated[0] : null;
+  console.log(repkey); // returns key alone
 });
 
 test("Find the frequency of each word in a sentence", () => {
