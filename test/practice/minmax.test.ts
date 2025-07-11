@@ -66,3 +66,16 @@ test("Find the longest word in an array of strings - using for loop", () => {
   }
   console.log("Longest word: ", longestWord);
 });
+
+test("Find the longest word in an array of strings - using for forEach", () => {
+  const str: string[] = ["Hello", "World", "JavaScript"];
+  console.log("Without order: ", str);
+  let longestWord: string = "";
+
+  str.forEach((item: string) => {
+    if (item.length > longestWord.length) {
+      longestWord = item;
+    }
+  });
+  console.log("Longest word: ", longestWord);
+});
