@@ -208,3 +208,15 @@ test("Descending order - using Bubble Sort Algorithm", () => {
   const sortedDescending = bubbleSortDescending(numbers);
   console.log(`Sorted in Descending Order: ${sortedDescending}`);
 });
+
+test("Find sorted or not", () => {
+  const arr: number[] = [1, 3, 5, 7, 4];
+
+  const isAsc: number[] = [...arr].sort((a, b) => a - b);
+  const isDesc: number[] = [...arr].sort((a, b) => b - a);
+
+  if (arr.join("") === isAsc.join("")) console.log("Its ascending order");
+  else if (arr.join("") === isDesc.join(""))
+    console.log("Its descending order");
+  else console.log("Not in order");
+});
