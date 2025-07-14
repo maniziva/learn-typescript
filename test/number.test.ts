@@ -10,7 +10,7 @@ test("Get Date and Time", () => {
 
 test("Find factorial of a number", () => {
   function factorial(num: number) {
-    if(num<0) throw new Error ("Given input is negative");
+    if (num < 0) throw new Error("Given input is negative");
     let fact: number = 1;
     for (let i = 1; i <= num; i++) {
       fact *= i;
@@ -23,7 +23,7 @@ test("Find factorial of a number", () => {
 
 test("Find factorial of a number array", () => {
   function factorial(n: number) {
-    if(n<0) throw new Error ("Given input is negative");
+    if (n < 0) throw new Error("Given input is negative");
 
     let fact: number = 1;
     for (let i = 1; i <= n; i++) {
@@ -80,18 +80,28 @@ test("Get birth year of given number array", () => {
 });
 
 test("Find the maximum number of consecutive 1s in a binary array", () => {
-  const arr: number[] = [1,0,0,1,1,0,1,1,1,0,1,1,1,1,1,0];
+  const arr: number[] = [1, 0, 0, 1, 1, 0, 1, 1, 1, 0, 1, 1, 1, 1, 1, 0];
 
   let max: number = 0;
   let count: number = 0;
-  
-  for(let i=0; i< arr.length; i++){
-    if(arr[i] === 1){
-      count=count+1;
+
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i] === 1) {
+      count = count + 1;
       max = Math.max(max, count);
-    } 
-    else count = 0;
+    } else count = 0;
   }
-  
+
   console.log(max);
+});
+
+test("Find missing number in array", () => {
+  const arr = [1, 2, 4, 5, 6];
+
+  const n = arr.length + 1;
+  const total = (n * (n + 1)) / 2;
+  const sum = arr.reduce((acc, val) => acc + val, 0);
+  const miss = total - sum;
+
+  console.log(miss);
 });
