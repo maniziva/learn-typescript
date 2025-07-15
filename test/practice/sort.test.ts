@@ -35,7 +35,7 @@ test("without sort function", () => {
     }
     return arr;
   }
-  console.log(arr); // [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+  console.log(asc(arr)); // [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 });
 
 test("Sort with custom object", () => {
