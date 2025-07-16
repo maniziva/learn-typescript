@@ -105,3 +105,14 @@ test("Find missing number in array", () => {
 
   console.log(miss);
 });
+
+test("Find missing number in array - 2", () => {
+  const arr: number[] = [6, 7, 8, 9, 11];
+  const min = Math.min(...arr);
+  const max = Math.max(...arr);
+
+  const total = (max * (max + 1)) / 2 - (min * (min - 1)) / 2;
+  const sum = arr.reduce((a, b) => a + b);
+
+  console.log(total - sum);
+});
