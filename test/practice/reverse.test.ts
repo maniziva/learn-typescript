@@ -56,6 +56,21 @@ test("To check if an array is palindrome", () => {
 
 test("To reverse a sentence", () => {
   const str: string = "Im Manikandan from Rayavaram";
-  const rev = str.split(" ").map((item) => item.split("").reverse().join("")).reverse();
+  const rev = str
+    .split(" ")
+    .map((item) => item.split("").reverse().join(""))
+    .reverse();
   console.log(rev);
+});
+
+test("Reverse a word without using buil-in method", () => {
+  const str: string = "the sky is blue";
+
+  let arr = str.split(" ");
+  let rev = "";
+
+  for (let i = arr.length - 1; i >= 0; i--) {
+    rev = rev + arr[i] + " ";
+  }
+  console.log(rev.trim());
 });
