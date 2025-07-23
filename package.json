@@ -2,7 +2,7 @@
   "name": "learn-typescript",
   "version": "1.0.0",
   "scripts": {
-    "test": "npx ts-node"
+    "test": "jest"
   },
   "devDependencies": {
     "@types/jest": "^29.5.14",

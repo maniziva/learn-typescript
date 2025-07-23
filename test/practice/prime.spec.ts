@@ -1,17 +1,36 @@
 test("Given input is prime or not", () => {
-  const n = 13;
-  let isPrime = true;
+  let num: number = 17;
+  let isPrime: boolean = true;
 
-  if (n < 2) {
-    isPrime = false;
-  } else {
-    for (let i = 2; i <= Math.sqrt(n); i++) {
-      if (n % i === 0) {
-        isPrime = false;
-        break;
-      }
-    }
+  if (num < 2) isPrime = false;
+
+  for (let i = 2; i < num; i++) {
+    if (num % i === 0) isPrime = false; break;
   }
 
-  console.log(`${n} is ${isPrime ? "a Prime" : "not a Prime"} number`);
+  isPrime ? console.log("Its Prime number") : console.log("Its not Prime number");
+});
+
+test("Print prime numbers", () => {
+  let prime: number[] = [];
+  let nonprime: number[] = [];
+  for (let i = 17; i <= 40; i++) {
+  
+      let isPrime = true;
+      if (i < 2) isPrime = false;
+  
+      for (let j = 2; j < i; j++) {
+          if (i % j === 0) {
+              isPrime = false;
+              break;
+          }
+      }
+  
+      if (isPrime) {
+          prime.push(i);
+      } else nonprime.push(i);
+  }
+  
+  console.log(prime); 
+  console.log(nonprime);
 });

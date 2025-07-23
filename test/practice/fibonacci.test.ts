@@ -11,3 +11,11 @@ test("Generate fibonacci series", () => {
 
   console.log(`Fibonacci series (first 10 numbers):`, fibonacci(10));
 });
+
+test("generate fibonacci series2", () => {
+  let series: number[] = [];
+  for (let i = 0; i < 10; i++) {
+    series[i] = i === 0 ? 0 : i === 1 ? 1 : series[i - 1] + series[i - 2];
+  }
+  console.log(series);
+});
