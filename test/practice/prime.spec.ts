@@ -1,11 +1,14 @@
 test("Given input is prime or not", () => {
-  let num: number = 17;
+  let num: number = 15;
   let isPrime: boolean = true;
 
   if (num < 2) isPrime = false;
 
   for (let i = 2; i < num; i++) {
-    if (num % i === 0) isPrime = false; break;
+    if (num % i === 0){
+      isPrime = false;
+      break;
+    } 
   }
 
   isPrime ? console.log("Its Prime number") : console.log("Its not Prime number");
@@ -14,7 +17,7 @@ test("Given input is prime or not", () => {
 test("Print prime numbers", () => {
   let prime: number[] = [];
   let nonprime: number[] = [];
-  for (let i = 17; i <= 40; i++) {
+  for (let i = 10; i <= 40; i++) {
   
       let isPrime = true;
       if (i < 2) isPrime = false;
