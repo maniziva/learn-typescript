@@ -1,7 +1,5 @@
-module.exports = {
+export default {
+  preset: 'ts-jest',
   testEnvironment: 'node',
-  testMatch: ['**/test/**/hashmap.test.ts'],
-  transform: {
-    '^.+\\.ts$': 'ts-jest',
-  },
+  testMatch: ['**/?(*.)+(spec|test).[jt]s?(x)'],
 };
