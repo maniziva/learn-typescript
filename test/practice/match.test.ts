@@ -40,10 +40,6 @@ test("To find vowels, consonants, spaces, digits, special characters in a string
 test('print the sum of digits from a given string (e.g., "abcd23")', () => {
   const str: string = "abcd23";
 
-  const sum = str
-    .split("")
-    .filter((char) => /\d/.test(char))
-    .reduce((acc, digit) => acc + parseInt(digit), 0);
-
-  console.log(`Sum of digits: ${sum}`);
+  const spl = str.match(/\d/gi)?.reduce((a,b) => a + parseInt(b), 0);
+  console.log(spl);
 });
