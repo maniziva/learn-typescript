@@ -220,3 +220,12 @@ test("Find sorted or not", () => {
     console.log("Its descending order");
   else console.log("Not in order");
 });
+
+test("Find sorted or not - using every method", () => {
+  const arr: number[] = [44, 38, 15, 27];
+
+  const isAsc = arr.every((val, i, a) => i === 0 || a[i - 1] <= val);
+  const isDesc = arr.every((val, i, a) => i === 0 || a[i - 1] >= val);
+
+  isAsc ? console.log("Ascending") : isDesc ? console.log("Descending") : console.log("Not sorted");
+});
