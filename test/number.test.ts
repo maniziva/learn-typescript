@@ -108,11 +108,11 @@ test("Find missing number in array", () => {
 
 test("Find missing number in array - 2", () => {
   const arr: number[] = [6, 7, 8, 9, 11];
-  const min = Math.min(...arr);
-  const max = Math.max(...arr);
+  const min: number = Math.min(...arr);
+  const max: number= Math.max(...arr);
 
-  const total = (max * (max + 1)) / 2 - (min * (min - 1)) / 2;
-  const sum = arr.reduce((a, b) => a + b);
+  const Exptotal: number = (max * (max + 1)) / 2 - (min * (min - 1)) / 2;
+  const ActualSum: number = arr.reduce((a, b) => a + b);
 
-  console.log(total - sum);
+  console.log(Exptotal - ActualSum);
 });

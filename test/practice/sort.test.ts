@@ -227,5 +227,23 @@ test("Find sorted or not - using every method", () => {
   const isAsc = arr.every((val, i, a) => i === 0 || a[i - 1] <= val);
   const isDesc = arr.every((val, i, a) => i === 0 || a[i - 1] >= val);
 
-  isAsc ? console.log("Ascending") : isDesc ? console.log("Descending") : console.log("Not sorted");
+  isAsc
+    ? console.log("Ascending")
+    : isDesc
+    ? console.log("Descending")
+    : console.log("Not sorted");
+});
+
+test("Sort without using built-in method", () => {
+  const num: number[] = [0, -1, 2, 7, 4, 5, 90, 99, 121, -1];
+
+  for (let i = 0; i < num.length - 1; i++) {
+    for (let j = 0; j < num.length - 1; j++) {
+      if (num[j] > num[j + 1]) {
+        [num[j], num[j + 1]] = [num[j + 1], num[j]];
+      }
+    }
+  }
+
+  console.log(num);
 });
