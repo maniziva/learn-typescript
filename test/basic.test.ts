@@ -1,7 +1,7 @@
 //import { sum } from '../yourModule'; // Adjust the import based on your module
 
 test("Basic test - Variables", () => {
-  let a: number = 2;
+  let a: number = 20;
   console.log(`a value is ${a}`);
   let b: string = "hello";
   console.log(b);
