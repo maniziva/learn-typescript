@@ -19,3 +19,13 @@ test("generate fibonacci series2", () => {
   }
   console.log(series);
 });
+
+test("generate fibonacci series with filter", () => {
+  let series: number[] = [];
+
+  for(let i=0; i<=10; i++){
+      series[i] = i===0 ? 0 : i===1 ? 1 : series[i-1] + series[i-2];
+  }
+  const filtered = series.filter((num) => num>=3 && num<=34);
+  console.log(filtered);
+});
