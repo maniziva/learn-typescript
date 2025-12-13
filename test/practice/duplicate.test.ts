@@ -59,6 +59,9 @@ test('Find first/second repeated and non-repeated character in a string - using 
   const nonRepeated = str.split("").filter((char) => charCount[char] === 1);
 
   console.log(firstNonRepeated);
+  // Only print the index if firstNonRepeated is defined
+  console.log(str.indexOf(firstNonRepeated || "Not Found"));
+    
   console.log(firstRepeated);
   console.log(repeated);
   console.log(nonRepeated);
