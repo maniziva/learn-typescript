@@ -15,7 +15,24 @@ test("To check if string is palindrome without built-in method", () => {
   for (let i = str.length - 1; i >= 0; i--) {
     reversed += str[i];
   }
-  if(str === reversed){
-    console.log('Its palindrome');
-  } else console.log('Its not palindrome');
+  if (str === reversed) {
+    console.log("Its palindrome");
+  } else console.log("Its not palindrome");
+});
+
+test("To check if string is palindrome using two pinter technique", () => {
+  const str = "MaMaM";
+  let left = 0;
+  let right = str.length - 1;
+  let isPrime: boolean = true;
+
+  while (left < right) {
+    if (str[left] !== str[right]) {
+      isPrime = false;
+      break;
+    }
+    left++;
+    right--;
+  }
+  console.log(isPrime ? "Its Palindrome" : "Its not Palindrome");
 });
