@@ -159,3 +159,20 @@ test("Replace the characters using hashmap and replace method", () => {
   const rep = str.replace(/[ort]/gi, (char) => map[char]);
   console.log(rep);
 });
+
+test("Input is aabbbcccc and out should be a2b3c4", () => {
+  const str: string = "aabbbcccc";
+
+  const map: { [key: string]: number } = {};
+
+  for (const char of str) {
+    map[char] = (map[char] || 0) + 1;
+  }
+
+  let result = "";
+  for (const key in map) {
+    result += key + map[key];
+  }
+
+  console.log(result);
+});
