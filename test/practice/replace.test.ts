@@ -17,3 +17,12 @@ test("Replace the string array", () => {
   const replaceStr = str.map((item) => item.replace(/a/gi, "A"));
   console.log(replaceStr);
 });
+
+test("Input is 'My name is so and so' and Output is '{My-name-is-so-and-so}'", () => {
+  const str1 = "My name is so and so";
+  const result = str1
+    .replace(/\s/g, "-")
+    .padStart(str1.length + 1, "{")
+    .padEnd(str1.length + 2, "}");
+  console.log(result);
+});
