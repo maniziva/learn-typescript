@@ -1,23 +1,28 @@
 test("Grab firstname value", () => {
-    type Person = {
+    interface Person {
       firstName: string;
-      LastName: string;
-      Mobile: string;
+      LastName?: string;
+      Mobile?: number;
     };
   
     const str: Person[] = [
       {
         firstName: "Manikandan",
         LastName: "Adaiaklam",
-        Mobile: "8098606447",
+        Mobile: 8098606447,
       },
       {
         firstName: "Mani",
         LastName: "Ziva",
-        Mobile: "8098606357",
+        Mobile: 8098606357,
       },
     ];
-  
+    
+    str.push({
+      firstName: "MS",
+    });
+    console.log(JSON.stringify(str));
+
     const result = str.find((item: any) => item.firstName === "Manikandan");
     console.log(result?.Mobile); 
   });

@@ -2,6 +2,9 @@ test("Inventory - Add, Delete, Get", () => {
   class InventoryList {
     private item: string[] = [];
 
+    constructor(){
+      console.log('Class is initialized');
+    }
     addList(name: string): any {
       if (!this.item.includes(name)) {
         this.item.push(name);
